@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<content>
+  {% for post in posts %}
+    <img src="{{ post.thumbnail.url }}">
+    <h3> {{ post.subtitle }} </h3>
+    <a href="{% url 'post' post.slug %}"> {{ post.title }} </a>
+    <p> {{ post.overview }} </p>
+  {% endfor %}
+</content>
+{% endblock content %}
